@@ -168,7 +168,11 @@ class CardBackGround extends StatelessWidget {
 class BottomNavigationIcon extends StatefulWidget {
   String img, text;
   int index, selectedIndex;
-  BottomNavigationIcon({this.img, this.text, this.index, this.selectedIndex});
+  BottomNavigationIcon(
+      {required this.img,
+      required this.text,
+      required this.index,
+      required this.selectedIndex});
 
   @override
   _BottomNavigationIconState createState() => _BottomNavigationIconState();

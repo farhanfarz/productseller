@@ -36,14 +36,14 @@ class MenuIcon extends StatelessWidget {
   final Color shadowLight, shadowDark, gradLight, gradDark, gradInnerLight;
 
   MenuIcon(
-      {this.image,
-      this.height,
-      this.width,
-      this.gradLight,
-      this.gradDark,
-      this.shadowLight,
-      this.shadowDark,
-      this.gradInnerLight});
+      {required this.image,
+      required this.height,
+      required this.width,
+      required this.gradLight,
+      required this.gradDark,
+      required this.shadowLight,
+      required this.shadowDark,
+      required this.gradInnerLight});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,7 @@ class MenuIcon extends StatelessWidget {
                 end: Alignment.bottomRight,
                 colors: [gradInnerLight, backDark])),
       ),
-      WebsafeSvg.asset(image,width: width,height: height)
+      WebsafeSvg.asset(image, width: width, height: height)
     ]);
   }
 }

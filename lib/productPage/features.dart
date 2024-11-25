@@ -63,7 +63,11 @@ class Features extends StatelessWidget {
 class FeatureCard extends StatelessWidget {
   final double padding;
   final String img, mainText, subText;
-  FeatureCard({this.img, this.mainText, this.subText, this.padding});
+  FeatureCard(
+      {required this.img,
+      required this.mainText,
+      required this.subText,
+      required this.padding});
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;

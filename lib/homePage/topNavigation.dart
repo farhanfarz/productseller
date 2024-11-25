@@ -59,16 +59,18 @@ class _TopNavigationState extends State<TopNavigation> {
 class NavigatorCard extends StatefulWidget {
   int index, slectedIndex;
   double width, height, pading;
-  Color gradLight, gradDark;
+  Color? gradLight, gradDark;
   String image;
 
   NavigatorCard(
-      {this.image,
-      this.width,
-      this.height,
-      this.pading,
-      this.index,
-      this.slectedIndex});
+      {required this.image,
+      required this.width,
+      required this.height,
+      required this.pading,
+      required this.index,
+      this.gradDark,
+      this.gradLight,
+      required this.slectedIndex});
 
   @override
   _NavigatorCardState createState() => _NavigatorCardState();
@@ -100,7 +102,10 @@ class _NavigatorCardState extends State<NavigatorCard> {
             gradient: LinearGradient(
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
-                colors: [widget.gradLight, widget.gradDark])),
+                colors: [
+                  widget.gradLight ?? Colors.transparent,
+                  widget.gradDark ?? Colors.transparent
+                ])),
         child: WebsafeSvg.asset(widget.image));
   }
 }

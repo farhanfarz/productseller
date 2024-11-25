@@ -8,7 +8,7 @@ import 'package:playstationapp/globalVariable.dart';
 class CardList extends StatelessWidget {
   String name;
 
-  CardList({this.name});
+  CardList({required this.name});
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,8 @@ class CardList extends StatelessWidget {
     if (name == "console") {
       return NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (OverscrollIndicatorNotification overscroll) {
-          overscroll.disallowGlow();
-          return;
+          overscroll.disallowIndicator();
+          return true;
         },
         child: Container(
           child: ListView(
@@ -135,6 +135,7 @@ class CardList extends StatelessWidget {
         ),
       );
     }
+    return SizedBox.shrink();
   }
 }
 
@@ -143,7 +144,12 @@ class ItemCard extends StatelessWidget {
   final double width;
   String img, imgVer, releaseDate, price;
 
-  ItemCard({this.width, this.img, this.imgVer, this.releaseDate, this.price});
+  ItemCard(
+      {required this.width,
+      required this.img,
+      required this.imgVer,
+      required this.releaseDate,
+      required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -162,7 +168,7 @@ class ItemCard extends StatelessWidget {
               end: Alignment.bottomRight,
               colors: [Color(0xff2D3648), Color(0xff1D232A)])),
       width: width * 0.65,
-      child: FlatButton(
+      child: MaterialButton(
         splashColor: Color(0x15111111),
         highlightColor: Colors.transparent,
         onPressed: () {

@@ -14,11 +14,11 @@ class ProductPage extends StatefulWidget {
 }
 
 class _ProductPageState extends State<ProductPage> {
-  Map data = {};
+  Map<String, dynamic>? data = {};
 
   @override
   Widget build(BuildContext context) {
-    data = ModalRoute.of(context).settings.arguments;
+    data = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>;
 
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
@@ -44,9 +44,9 @@ class _ProductPageState extends State<ProductPage> {
                 Expanded(
                   flex: 7,
                   child: Product(
-                    img: data["img"],
-                    releaseDate: data["releaseDate"],
-                    price: data["price"],
+                    img: data?["img"],
+                    releaseDate: data?["releaseDate"],
+                    price: data?["price"],
                   ),
                 ),
                 Expanded(
@@ -60,7 +60,7 @@ class _ProductPageState extends State<ProductPage> {
                 ),
                 Expanded(
                   flex: 2,
-                  child: PriceTage(price: data["price"]),
+                  child: PriceTage(price: data?["price"]),
                 )
               ],
             ),

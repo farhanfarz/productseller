@@ -6,7 +6,7 @@ import 'package:websafe_svg/websafe_svg.dart';
 // ignore: must_be_immutable
 class Product extends StatefulWidget {
   String img, releaseDate, price;
-  Product({this.img, this.releaseDate, this.price});
+  Product({required this.img, required this.releaseDate, required this.price});
   @override
   _ProductState createState() => _ProductState();
 }
@@ -132,13 +132,13 @@ class MenuIcon extends StatelessWidget {
   final Color shadowDark, gradLight, gradDark, gradInnerLight;
 
   MenuIcon(
-      {this.image,
-      this.height,
-      this.width,
-      this.gradLight,
-      this.gradDark,
-      this.shadowDark,
-      this.gradInnerLight});
+      {required this.image,
+      required this.height,
+      required this.width,
+      required this.gradLight,
+      required this.gradDark,
+      required this.shadowDark,
+      required this.gradInnerLight});
 
   @override
   Widget build(BuildContext context) {

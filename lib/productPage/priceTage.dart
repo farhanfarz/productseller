@@ -5,7 +5,7 @@ import 'package:websafe_svg/websafe_svg.dart';
 
 class PriceTage extends StatefulWidget {
   String price;
-  PriceTage({this.price});
+  PriceTage({required this.price});
 
   @override
   _PriceTageState createState() => _PriceTageState();
@@ -61,7 +61,7 @@ class _PriceTageState extends State<PriceTage> {
 
 class Price extends StatelessWidget {
   final String price;
-  Price({this.price});
+  Price({required this.price});
 
   @override
   Widget build(BuildContext context) {

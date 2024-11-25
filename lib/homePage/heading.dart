@@ -4,8 +4,7 @@ import 'package:playstationapp/globalVariable.dart';
 
 class Heading extends StatelessWidget {
   final double width;
-  Heading({this.width});
-
+  Heading({required this.width});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,9 @@ class Heading extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          SizedBox(height: 15,),
+          SizedBox(
+            height: 15,
+          ),
           Text("Featured",
               style: TextStyle(
                 fontFamily: "Play",
@@ -25,13 +26,12 @@ class Heading extends StatelessWidget {
                 color: mainTextColor,
               )),
           Text("Products",
-              style:TextStyle(
+              style: TextStyle(
                 letterSpacing: 1.5,
-                fontFamily:"Bungee",
+                fontFamily: "Bungee",
                 fontSize: 34,
-                color:Color(0xff97A4B2),
-
-              )) ,
+                color: Color(0xff97A4B2),
+              )),
         ],
       ),
     );
